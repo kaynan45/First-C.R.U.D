@@ -38,8 +38,20 @@ function updatePostContent(id, newContent) {
   const postToBeUpdated = takePosts().find((post) => {
     return post.id === id;
   });
-  postToBeUpdated.content = newContent
+  postToBeUpdated.content = newContent;
 }
 
 updatePostContent(1, "New post content");
 console.log(takePosts());
+
+//DELETE
+function deletePost(id) {
+  UpdatedPostsList = takePosts().filter((actualPost => {
+    return actualPost.id !== id;
+  }))
+  miniTwitter.posts = UpdatedPostsList;
+};
+deletePost(2);
+console.log(takePosts())
+
+
