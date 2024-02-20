@@ -12,7 +12,7 @@ const miniTwitter = {
     },
   ],
 };
-//create
+//CREATE
 function createPost(data) {
   miniTwitter.posts.push({
     owner: data.owner,
@@ -21,4 +21,11 @@ function createPost(data) {
 }
 
 createPost({ owner: "kaynan45", content: "My second tweet" });
-console.log(miniTwitter.posts);
+//console.log(miniTwitter.posts);
+
+//READ
+function takePosts() {
+    return miniTwitter.posts;
+};
+
+console.log(takePosts())
